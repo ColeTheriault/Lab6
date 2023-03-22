@@ -15,9 +15,9 @@ def main():  # Function that stores the programs menu
             print('Your password has been encoded and stored!')
             print()
         elif menu_option == 2:  # if statement that occurs if menu option is 2
-            if new_password != 0: # New_password is 0 by default to avoid issues
+            if new_password != 0:  # New_password is 0 by default to avoid issues
                 decoded_password = decoder(new_password)
-                print('Your password is:', decoded_password)
+                print(f'The encoded password is {new_password}, and the original password is {decoded_password}')
                 print()
             else:  # In case there is no stored password
                 print('No stored password')
@@ -57,5 +57,5 @@ def decoder(x):
 
 
 if __name__ == '__main__':
-    main()
-
+    main()  # Runs the main function
+    # The main function will continue to loop unless option 3 is chosen
