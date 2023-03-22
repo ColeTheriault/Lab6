@@ -35,7 +35,25 @@ def encoder(password):  # Function that encodes/ changes the password inputted b
 
 
 def decoder(x):
-    pass
+    x = int(x)  # Turns value into integer
+    a = (((x // 10000000) % 10) + 7) % 10
+    b = (((x // 1000000) % 10) + 7) % 10
+    c = (((x // 100000) % 10) + 7) % 10
+    d = (((x // 10000) % 10) + 7) % 10
+    e = (((x // 1000) % 10) + 7) % 10
+    f = (((x // 100) % 10) + 7) % 10   # Fetches values for each individual place and adds 7.
+    g = (((x // 10) % 10) + 7) % 10    # This returns the original number (3+7=10) if you mod it with 10.
+    h = ((x % 10) + 7) % 10
+    a = str(a)
+    b = str(b)
+    c = str(c)
+    d = str(d)
+    e = str(e)
+    f = str(f)
+    g = str(g)
+    h = str(h)
+    addition = a + b + c + d + e + f + g + h   # Adds strings together to get the password value
+    return addition
 
 
 if __name__ == '__main__':
