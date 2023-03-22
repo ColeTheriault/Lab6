@@ -1,4 +1,5 @@
 def main():  # Function that stores the programs menu
+    new_password = 0
     print()
     print('Menu')
     print('-------------')
@@ -14,7 +15,12 @@ def main():  # Function that stores the programs menu
             print('Your password has been encoded and stored!')
             print()
         elif menu_option == 2:  # if statement that occurs if menu option is 2
-            pass
+            if new_password != 0: # New_password is 0 by default to avoid issues
+                decoded_password = decoder(new_password)
+                print('Your password is:', decoded_password)
+                print()
+            else:  # In case there is no stored password
+                print('No stored password')
         elif menu_option == 3:  # if statement that occurs if menu option is 3
             break
 
@@ -26,6 +32,10 @@ def encoder(password):  # Function that encodes/ changes the password inputted b
         number = str(number + 3)  # Adds 3 to the variable and changes the variable back to a string
         new_password_string = new_password_string + number[-1]  # adds the last number in the variable
     return new_password_string  # returns the new password
+
+
+def decoder(x):
+    pass
 
 
 if __name__ == '__main__':
